@@ -3,8 +3,7 @@
 #ifdef USERHOOK_INIT
 void Copter::userhook_init()
 {
-    // put your initialisation code here
-    // this will be called once at start-up
+    //init
 }
 #endif
 
@@ -39,6 +38,9 @@ void Copter::userhook_SlowLoop()
 #ifdef USERHOOK_SUPERSLOWLOOP
 void Copter::userhook_SuperSlowLoop()
 {
-    // put your 1Hz code here
+    //mavlink_javi_msg_t my_msg;
+    mavlink_msg_javi_msg_send(MAVLINK_COMM_1, 12345);
+    //gcs_send_text(MAV_SEVERITY_CRITICAL,"HOLA GCS");
+
 }
 #endif
